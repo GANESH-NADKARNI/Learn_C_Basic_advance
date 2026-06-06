@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C Programming - Interactive Tutorial</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-code"></i>
+                <span>Learn C Programming</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#basics" class="nav-link">Basics</a>
+                <a href="#variables" class="nav-link">Variables</a>
+                <a href="#control" class="nav-link">Control Flow</a>
+                <a href="#functions" class="nav-link">Functions</a>
+                <a href="#quiz" class="nav-link">Quiz</a>
+            </div>
+            <button class="theme-toggle" id="themeToggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Basics C Programming</h1>
+            <p class="hero-subtitle">Learn the fundamentals of C programming with interactive examples and exercises</p>
+            <button class="cta-button" onclick="document.getElementById('basics').scrollIntoView({behavior: 'smooth'})">
+                Start Learning <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="hero-animation">
+            <div class="code-snippet floating">
+                <span class="keyword">#include</span> <span class="string">&lt;stdio.h&gt;</span><br>
+                <span class="keyword">int</span> <span class="function">main</span>() {<br>
+                &nbsp;&nbsp;<span class="function">printf</span>(<span class="string">"Hello, World!"</span>);<br>
+                &nbsp;&nbsp;<span class="keyword">return</span> <span class="number">0</span>;<br>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- C Basics Section -->
+        <section id="basics" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-book"></i> C Programming Basics</h2>
+                <p>Understanding the fundamentals of C programming language</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-header" onclick="toggleTopic('intro')">
+                    <h3><i class="fas fa-play-circle"></i> Introduction to C</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="topic-content" id="intro">
+                    <p>C is a general-purpose programming language created by Dennis Ritchie in 1972. It's known for its efficiency, flexibility, and close-to-hardware programming capabilities.</p>
+                    
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>hello.c</span>
+                            <button class="run-button" onclick="runCode('hello')">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                        </div>
+                        <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}</code></pre>
+                        <div class="output" id="hello-output"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-header" onclick="toggleTopic('structure')">
+                    <h3><i class="fas fa-sitemap"></i> Program Structure</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="topic-content" id="structure">
+                    <p>Every C program follows a basic structure with preprocessor directives, main function, and statements.</p>
+                    
+                    <div class="structure-diagram">
+                        <div class="structure-part">
+                            <div class="part-label">Preprocessor Directives</div>
+                            <div class="part-code">#include &lt;stdio.h&gt;</div>
+                        </div>
+                        <div class="structure-part">
+                            <div class="part-label">Main Function</div>
+                            <div class="part-code">int main() { ... }</div>
+                        </div>
+                        <div class="structure-part">
+                            <div class="part-label">Statements</div>
+                            <div class="part-code">printf("Hello");</div>
+                        </div>
+                        <div class="structure-part">
+                            <div class="part-label">Return Statement</div>
+                            <div class="part-code">return 0;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Variables Section -->
+        <section id="variables" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-box"></i> Variables and Data Types</h2>
+                <p>Learn about different data types and how to use variables in C</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-header" onclick="toggleTopic('datatypes')">
+                    <h3><i class="fas fa-tags"></i> Data Types</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="topic-content" id="datatypes">
+                    <div class="data-types-grid">
+                        <div class="data-type-card">
+                            <h4>int</h4>
+                            <p>Integer numbers</p>
+                            <span class="size">4 bytes</span>
+                        </div>
+                        <div class="data-type-card">
+                            <h4>float</h4>
+                            <p>Decimal numbers</p>
+                            <span class="size">4 bytes</span>
+                        </div>
+                        <div class="data-type-card">
+                            <h4>double</h4>
+                            <p>Double precision</p>
+                            <span class="size">8 bytes</span>
+                        </div>
+                        <div class="data-type-card">
+                            <h4>char</h4>
+                            <p>Single character</p>
+                            <span class="size">1 byte</span>
+                        </div>
+                    </div>
+
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>variables.c</span>
+                            <button class="run-button" onclick="runCode('variables')">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                        </div>
+                        <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int age = 25;
+    float height = 5.8;
+    char grade = 'A';
+    
+    printf("Age: %d\n", age);
+    printf("Height: %.1f\n", height);
+    printf("Grade: %c\n", grade);
+    
+    return 0;
+}</code></pre>
+                        <div class="output" id="variables-output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Control Flow Section -->
+        <section id="control" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-route"></i> Control Flow</h2>
+                <p>Master conditional statements and loops in C programming</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-header" onclick="toggleTopic('conditions')">
+                    <h3><i class="fas fa-code-branch"></i> Conditional Statements</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="topic-content" id="conditions">
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>conditions.c</span>
+                            <button class="run-button" onclick="runCode('conditions')">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                        </div>
+                        <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    int score = 85;
+    
+    if (score >= 90) {
+        printf("Grade: A\n");
+    } else if (score >= 80) {
+        printf("Grade: B\n");
+    } else if (score >= 70) {
+        printf("Grade: C\n");
+    } else {
+        printf("Grade: F\n");
+    }
+    
+    return 0;
+}</code></pre>
+                        <div class="output" id="conditions-output"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-header" onclick="toggleTopic('loops')">
+                    <h3><i class="fas fa-sync"></i> Loops</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="topic-content" id="loops">
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>loops.c</span>
+                            <button class="run-button" onclick="runCode('loops')">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                        </div>
+                        <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+int main() {
+    printf("For loop:\n");
+    for (int i = 1; i <= 5; i++) {
+        printf("Iteration %d\n", i);
+    }
+    
+    printf("\nWhile loop:\n");
+    int j = 1;
+    while (j <= 3) {
+        printf("Count: %d\n", j);
+        j++;
+    }
+    
+    return 0;
+}</code></pre>
+                        <div class="output" id="loops-output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Functions Section -->
+        <section id="functions" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-cogs"></i> Functions</h2>
+                <p>Learn to create and use functions for modular programming</p>
+            </div>
+
+            <div class="topic-card">
+                <div class="topic-header" onclick="toggleTopic('function-basics')">
+                    <h3><i class="fas fa-function"></i> Function Basics</h3>
+                    <i class="fas fa-chevron-down toggle-icon"></i>
+                </div>
+                <div class="topic-content" id="function-basics">
+                    <div class="code-example">
+                        <div class="code-header">
+                            <span>functions.c</span>
+                            <button class="run-button" onclick="runCode('functions')">
+                                <i class="fas fa-play"></i> Run
+                            </button>
+                        </div>
+                        <pre><code class="language-c">#include &lt;stdio.h&gt;
+
+// Function declaration
+int add(int a, int b);
+void greet(char name[]);
+
+int main() {
+    int sum = add(5, 3);
+    printf("Sum: %d\n", sum);
+    
+    greet("");
+    
+    return 0;
+}
+
+// Function definition
+int add(int a, int b) {
+    return a + b;
+}
+
+void greet(char name[]) {
+    printf("Hello, %s!\n", name);
+}</code></pre>
+                        <div class="output" id="functions-output"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz" class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-question-circle"></i> Test Your Knowledge</h2>
+                <p>Challenge yourself with interactive quizzes</p>
+            </div>
+
+            <div class="quiz-container">
+                <div class="quiz-card" id="quizCard">
+                    <div class="quiz-question">
+                        <h3>Question <span id="questionNumber">1</span> of <span id="totalQuestions">5</span></h3>
+                        <p id="questionText">What is the correct way to declare an integer variable in C?</p>
+                    </div>
+                    
+                    <div class="quiz-options" id="quizOptions">
+                        <button class="option-btn" onclick="selectOption(0)">int x;</button>
+                        <button class="option-btn" onclick="selectOption(1)">integer x;</button>
+                        <button class="option-btn" onclick="selectOption(2)">var x;</button>
+                        <button class="option-btn" onclick="selectOption(3)">num x;</button>
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button class="quiz-btn" id="nextBtn" onclick="nextQuestion()" disabled>Next Question</button>
+                        <button class="quiz-btn" id="restartBtn" onclick="restartQuiz()" style="display: none;">Restart Quiz</button>
+                    </div>
+                    
+                    <div class="quiz-score" id="quizScore" style="display: none;">
+                        <h3>Quiz Complete!</h3>
+                        <p>Your Score: <span id="finalScore">0</span>/5</p>
+                        <div class="score-message" id="scoreMessage"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Learn C Programming. Interactive educational platform for C programming.</p>
+            <div class="footer-links">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
