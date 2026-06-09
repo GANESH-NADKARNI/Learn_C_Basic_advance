@@ -70,7 +70,7 @@ CBASIC/
 ### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/cbasic.git
+git clone https://github.com/GANESH-NADKARNI/Learn_C_Basic_advance.git
 ```
 
 ### Open the Project
